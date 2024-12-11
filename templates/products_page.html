@@ -1,0 +1,13 @@
+<h1>Product List</h1>
+
+
+    {% for product in products %}
+    <div style=" border: 2px solid; width: 200px;">
+        <h1>{{ product.name }}</h1> <br> <p>Price:</p>Rs.{{ product.price }}<br>
+            <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+
+        </div>
+    {% endfor %}
+
+
+<a href="{% url 'logout' %}">Logout</a>

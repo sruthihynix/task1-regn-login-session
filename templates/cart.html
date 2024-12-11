@@ -1,0 +1,13 @@
+<h1>Your Cart</h1>
+<ol>
+    {% for item in cart_items %}
+
+        <li><h4>{{ item.product.name }}</h4> <br>
+            Price:Rs.{{ item.product.price }} <br>
+            Quantity: {{ item.quantity }}
+            <a href="{% url 'delete_from_cart' item.id %}">Remove</a>
+        </li>
+    {% endfor %}
+</ol>
+<a href="{% url 'product_list' %}">Continue Shopping</a><br>
+<a href="{% url 'logout' %}">Logout</a>
